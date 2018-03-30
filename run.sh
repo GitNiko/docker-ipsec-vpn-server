@@ -101,9 +101,9 @@ PUBLIC_IP=${VPN_PUBLIC_IP:-''}
 check_ip "$PUBLIC_IP" || PUBLIC_IP=$(wget -t 3 -T 15 -qO- http://ipv4.icanhazip.com)
 check_ip "$PUBLIC_IP" || exiterr "Cannot detect this server's public IP. Define it in your 'env' file as 'VPN_PUBLIC_IP'."
 
-L2TP_NET=${VPN_L2TP_NET:-'172.19.42.0/24'}
-L2TP_LOCAL=${VPN_L2TP_LOCAL:-'172.19.42.1'}
-L2TP_POOL=${VPN_L2TP_POOL:-'172.19.42.10-172.19.42.250'}
+L2TP_NET=${VPN_L2TP_NET:-'172.19.1.0/16'}
+L2TP_LOCAL=${VPN_L2TP_LOCAL:-'172.19.1.1'}
+L2TP_POOL=${VPN_L2TP_POOL:-'172.19.1.30-172.19.1.250'}
 XAUTH_NET=${VPN_XAUTH_NET:-'172.19.43.0/24'}
 XAUTH_POOL=${VPN_XAUTH_POOL:-'172.19.43.10-172.19.43.250'}
 DNS_SRV1=${VPN_DNS_SRV1:-'8.8.8.8'}
